@@ -3,6 +3,8 @@ package com.codeclan.wordcounter;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.HashMap;
+
 import static org.junit.Assert.*;
 
 /**
@@ -29,5 +31,15 @@ public class WordCounterTest {
         wordCounter = new WordCounter();
         wordCounter.addPhrase("This is a test");
         assertEquals( 4, wordCounter.getWordListLength() );
+    }
+
+    @Test
+    public void canReturnNumberOfWordsInAPhrase(){
+        wordCounter = new WordCounter();
+        wordCounter.addPhrase("Hello Hello Hello Hello Bat");
+        HashMap<String, Integer> expected = new HashMap<String, Integer>();
+        expected.put("Hello", 4);
+        expected.put("Bye", 1);
+        assertEquals(expected, wordCounter.getWordOccurances());
     }
 }
