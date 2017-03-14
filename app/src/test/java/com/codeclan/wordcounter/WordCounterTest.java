@@ -21,11 +21,13 @@ public class WordCounterTest {
 
     @Test
     public void hasArrayList(){
-        assertEquals( 0, wordCounter.getWordList() );
+        assertEquals( 0, wordCounter.getWordListLength() );
     }
 
-//    @Test
-//    public void arrayListHasWords(){
-//        assertEquals( 4, wordCounter.countWords() );
-//    }
+    @Test
+    public void arrayListHasWords(){
+        wordCounter = new WordCounter();
+        wordCounter.addPhrase("This is a test");
+        assertEquals( 4, wordCounter.getWordListLength() );
+    }
 }

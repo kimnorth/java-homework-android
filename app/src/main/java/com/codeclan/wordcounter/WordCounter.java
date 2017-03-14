@@ -14,8 +14,16 @@ public class WordCounter {
         this.wordList = new ArrayList<String>();
     }
 
-    public int getWordList() {
+    public int getWordListLength() {
         return wordList.size();
+    }
+
+    public void addPhrase(String phrase){
+
+        String[] words = phrase.split(" ");
+        for (String word : words){
+            wordList.add(word);
+        }
     }
 
 }
